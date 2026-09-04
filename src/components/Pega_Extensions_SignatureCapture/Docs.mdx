@@ -1,0 +1,18 @@
+import { Meta, Primary, Controls, Story } from '@storybook/blocks';
+import * as DemoStories from './demo.stories';
+
+<Meta of={DemoStories} />
+
+# Signature Capture
+
+A custom field component that captures a signature from the user. Users can either draw their signature on a canvas or type their name and select from a variety of cursive signature fonts.
+
+## Usage
+
+Use this component to collect a user's signature. It binds to a text property and stores the resulting signature as a base64 encoded image (SVG for drawn signatures, PNG for typed ones).
+
+## Props
+
+<Primary />
+
+<Controls />

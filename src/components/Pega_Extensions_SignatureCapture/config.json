@@ -1,0 +1,33 @@
+{
+  "name": "SignatureCapture",
+  "version": "1.0.0",
+  "type": "Field",
+  "description": "Captures a signature from the user via drawing or typing.",
+  "componentKey": "Pega_Extensions_SignatureCapture",
+  "properties": [
+    {
+      "name": "label",
+      "format": "Text"
+    },
+    {
+      "name": "value",
+      "format": "Text"
+    },
+    {
+      "name": "validatemessage",
+      "format": "Text"
+    },
+    {
+      "name": "helperText",
+      "format": "Text"
+    },
+    {
+      "name": "hideLabel",
+      "format": "Boolean"
+    },
+    {
+      "name": "testId",
+      "format": "Text"
+    }
+  ]
+}

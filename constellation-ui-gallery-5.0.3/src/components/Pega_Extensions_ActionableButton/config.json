@@ -1,0 +1,66 @@
+{
+    "name": "Pega_Extensions_ActionableButton",
+    "label": "Actionable button",
+    "description": "Actionable button",
+    "organization": "Pega",
+    "version": "5.0.3",
+    "library": "Extensions",
+    "allowedApplications": [],
+    "componentKey": "Pega_Extensions_ActionableButton",
+    "type": "Field",
+    "subtype": "Text",
+    "properties": [
+        {
+            "name": "labelOption",
+            "label": "Label value",
+            "format": "SELECT",
+            "defaultValue": "custom",
+            "source": [
+                {
+                    "key": "default",
+                    "value": "Default"
+                },
+                {
+                    "key": "custom",
+                    "value": "Custom"
+                }
+            ]
+        },
+        {
+            "name": "label",
+            "label": "Custom label value",
+            "format": "VALUEINPUT",
+            "required": true,
+            "ruleType": "Paragraph"
+        },
+        {
+            "name": "localAction",
+            "label": "Local Action ID",
+            "format": "TEXT"
+        },
+        {
+            "name": "visibility",
+            "label": "Visible",
+            "format": "VISIBILITY"
+        },
+        {
+            "format": "LABEL",
+            "label": "About",
+            "name": "PegaAboutLabel",
+            "variant": "h3"
+        },
+        {
+            "format": "LABEL",
+            "label": "Pega_Extensions 5.0.3, Fri Aug 07 2026, 26.1.0-103357",
+            "name": "PegaAboutData",
+            "variant": "primary"
+        }
+    ],
+    "defaultConfig": {
+        "label": "@L $this.label",
+        "localAction": ""
+    },
+    "buildDate": "2026-08-07T18:43:25.900Z",
+    "infinityVersion": "26.1.0-103357",
+    "packageCosmosVersion": "9.19.0"
+}

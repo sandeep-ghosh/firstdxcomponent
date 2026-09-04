@@ -1,0 +1,44 @@
+{
+    "name": "Pega_Extensions_ExpandableTable",
+    "label": "Expandable Table",
+    "description": "Read-only table with expandable rows for viewing embedded data object details",
+    "organization": "Pega",
+    "version": "5.0.3",
+    "library": "Extensions",
+    "allowedApplications": [],
+    "componentKey": "Pega_Extensions_ExpandableTable",
+    "type": "Template",
+    "subtype": "DETAILS",
+    "properties": [
+        {
+            "name": "A",
+            "label": "Region A (Columns)",
+            "format": "CONTENTPICKER",
+            "addTypeList": [
+                "Fields"
+            ],
+            "allowCreatingGroup": false
+        },
+        {
+            "name": "detailViewName",
+            "label": "Detail view name",
+            "format": "TEXT",
+            "required": false
+        },
+        {
+            "format": "LABEL",
+            "label": "About",
+            "name": "PegaAboutLabel",
+            "variant": "h3"
+        },
+        {
+            "format": "LABEL",
+            "label": "Pega_Extensions 5.0.3, Fri Aug 07 2026, 26.1.0-103357",
+            "name": "PegaAboutData",
+            "variant": "primary"
+        }
+    ],
+    "buildDate": "2026-08-07T18:43:29.125Z",
+    "infinityVersion": "26.1.0-103357",
+    "packageCosmosVersion": "9.19.0"
+}
