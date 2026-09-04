@@ -25,6 +25,15 @@ A comprehensive e-signature field component that allows users to seamlessly sign
 - **Customization:** Let users customize their pen/font color seamlessly.
 - **Output:** Generates a reliable Base64 image payload ready to be saved into your Pega data model.
 
+### 2. Interactive Image Annotator (Hotspot Selector)
+
+A visual field component allowing users to place markers or drop pins on an image (useful for inspections, damage reports, etc.).
+
+- **Responsive Coordinates:** Calculates clicks based on percentages (X, Y) so markers remain accurate even if the image resizes.
+- **Numbered Markers:** Renders sequence-numbered pins where the user clicks.
+- **Undo/Clear Controls:** Easily revert mistakes with built-in controls.
+- **Output:** Saves a structured JSON array of annotations seamlessly into Pega.
+
 ---
 
 ## 🚀 Getting Started (Local Development)

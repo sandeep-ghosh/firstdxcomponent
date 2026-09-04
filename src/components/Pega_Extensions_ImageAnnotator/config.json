@@ -1,0 +1,37 @@
+{
+  "name": "ImageAnnotator",
+  "version": "1.0.0",
+  "type": "Field",
+  "description": "Allows users to drop annotation pins on an image.",
+  "componentKey": "Pega_Extensions_ImageAnnotator",
+  "properties": [
+    {
+      "name": "label",
+      "format": "Text"
+    },
+    {
+      "name": "value",
+      "format": "Text"
+    },
+    {
+      "name": "imageUrl",
+      "format": "Text"
+    },
+    {
+      "name": "validatemessage",
+      "format": "Text"
+    },
+    {
+      "name": "helperText",
+      "format": "Text"
+    },
+    {
+      "name": "hideLabel",
+      "format": "Boolean"
+    },
+    {
+      "name": "testId",
+      "format": "Text"
+    }
+  ]
+}

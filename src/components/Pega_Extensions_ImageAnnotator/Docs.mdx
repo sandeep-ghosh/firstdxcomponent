@@ -1,0 +1,21 @@
+import { Meta, Primary, Controls, Story } from '@storybook/blocks';
+import * as DemoStories from './demo.stories';
+
+<Meta of={DemoStories} />
+
+# Image Annotator
+
+A field component that displays a background image and allows users to click to drop marker pins. 
+The pin coordinates are saved as a JSON array (value) which can be stored seamlessly back into the Pega data model.
+
+### Key Features
+- Automatically calculates responsive X and Y percentages so pins stay correctly placed if the image scales on different devices.
+- Undo and Clear All functionality built-in.
+- Renders pins natively with numbered markers.
+- `imageUrl` property allows dynamic binding of different images (e.g. car diagram, body map, floorplan).
+
+<Primary />
+
+## Props
+
+<Controls />
