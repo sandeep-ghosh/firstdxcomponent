@@ -1,9 +1,13 @@
 import { render } from '@testing-library/react';
 import { PegaExtensionsSignatureCapture } from './index';
-import { configProps } from './demo.stories';
 
 const testProps = {
-  ...configProps,
+  value: '',
+  label: 'Signature',
+  validatemessage: '',
+  hideLabel: false,
+  helperText: 'Sign here',
+  testId: 'signature-1',
   getPConnect: () =>
     ({
       getActionsApi: () => ({
