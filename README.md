@@ -10,7 +10,7 @@ These components adhere strictly to the Cosmos React design system, ensuring a s
 
 You can interact with and preview all the custom components in this repository without needing to deploy them to a Pega environment. We use Storybook to provide an interactive playground.
 
-👉 **[View the Live Component Gallery Here]** _(Replace with your GitHub Pages URL, e.g., `https://sandeep-ghosh.github.io/firstdxcomponent`)_
+👉 **[View the Live Component Gallery Here](https://sandeep-ghosh.github.io/firstdxcomponent)**
 
 ---
 
