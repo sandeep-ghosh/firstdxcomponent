@@ -1,46 +1,84 @@
-# Using Custom Components in Constellation
+# Pega Constellation Custom UI Gallery
 
-## Overview
+Welcome to the **Pega Constellation Custom UI Gallery**. This repository contains a collection of custom Constellation DX components built to extend the native capabilities of Pega Platform and Pega Launchpad.
 
-This project provides you with an environment to extend Constellation by giving you tools to create and publish custom components that are not available from the Constellation installation.
+These components adhere strictly to the Cosmos React design system, ensuring a seamless, modern, and accessible user experience across all Pega applications.
 
-## Before you begin
+---
 
-Review the following checklist before you create a Constellation DX component:
+## 🎨 Live Demo (Storybook)
 
-## Design considerations
+You can interact with and preview all the custom components in this repository without needing to deploy them to a Pega environment. We use Storybook to provide an interactive playground.
 
-Involve an Experience Designer in your process. This will help you determine the exact issue to be resolved. For more information on the role of an Experience Designer, see **Experience Designer** [here](https://community.pega.com/roles/experience-designer).
+👉 **[View the Live Component Gallery Here]** _(Replace with your GitHub Pages URL, e.g., `https://sandeep-ghosh.github.io/firstdxcomponent`)_
 
-## The Experience Designer must meet the following requirements:
+---
 
-Must have a background in UI and UX design.
-Must understand Pega's best practices for design. For more information, see **Best practices for designing with the Constellation design system** [here](https://design.pega.com/design/getting-started/).
+## 🧩 Featured Components
 
-## Functionality considerations
+### 1. Signature Capture
 
-Check if an existing component in App Studio contains the features you need. If not, check for existing components that contain similar features.
-Connect with Pega Support to find out if a component containing a similar feature will be included in the next release. If yes, assess if you can wait for the next release.
+A comprehensive e-signature field component that allows users to seamlessly sign documents and forms.
 
-## Maintenance considerations
+- **Draw Mode:** Freehand gesture capture using a smooth HTML5 Canvas.
+- **Type Mode:** Allows users to type their name and preview it in 5 popular cursive web fonts (Caveat, Dancing Script, Pacifico, Great Vibes, Satisfy).
+- **Customization:** Let users customize their pen/font color seamlessly.
+- **Output:** Generates a reliable Base64 image payload ready to be saved into your Pega data model.
 
-Ensure you have the bandwidth to maintain the Constellation DX component and keep it up-to-date with every release of Pega Infinity. Evaluate if doing this might prevent you from upgrading to future releases of Pega Infinity.
-Evaluate if you are able to meet the compliance standards for data privacy and accessibility for Constellation DX components. Note that not meeting these standards might lead to legal compliance issues.
+---
 
-For more info [here](https://pega-dev.zoominsoftware.io/bundle/constellation-dx-components/page/constellation-dx-components/custom-components/design-requirements-constellation-dx-components.html).
+## 🚀 Getting Started (Local Development)
 
-## Prerequisites
+If you'd like to clone this repository and run the gallery locally to make your own modifications:
 
-Ensure you have access to the following in your system:
+### Prerequisites
 
-- Pega Infinity Server version 25.1 or later
+- Node.js (v18+ recommended)
+- npm
 
-- Git version 2.30 or later
+### Installation
 
-- System node version >= 24.4.1
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/firstdxcomponent.git
+   cd firstdxcomponent
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-- System npm version 11.4.2
+### Running the Local Demo
 
-## Latest Documentation
+To start the local Storybook server and view the components:
 
-Find the latest documentation on using **DX Component Builder** [here](https://docs.pega.com/bundle/constellation-dx-components/page/constellation-dx-components/custom-components/whats-new-constellation-dx-component-builder.html)
+```bash
+npm run startStorybook
+```
+
+This will open the gallery at `http://localhost:6040`.
+
+---
+
+## 🛠 Building & Publishing to Pega
+
+To publish a component to your Pega environment:
+
+1. Authenticate with your Pega server:
+   ```bash
+   npm run authenticate
+   ```
+2. Build and publish all components:
+   ```bash
+   npm run publishAll
+   ```
+   _(Or use `npm run publish` to publish a specific component)._
+
+---
+
+## 📖 Pega Guidelines & Best Practices
+
+- **Launchpad Safe:** Components are designed using `getMappedKey` and core `PConnect` APIs to ensure they operate seamlessly on both Pega Platform and Pega Launchpad.
+- **Cosmos Native:** UI layouts use `@pega/cosmos-react-core` components (`Flex`, `FormField`, `RadioButtonGroup`, etc.) rather than third-party UI libraries, guaranteeing they inherit the exact theming and accessibility rules of your Pega application.
+
+_(For detailed internal guidelines, please refer to the `Component_Build_Guide.md` and `AGENTS.md` files included in the repo)._

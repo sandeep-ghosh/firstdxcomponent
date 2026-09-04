@@ -7,8 +7,10 @@ import {
   FormField,
   FormControl,
   RadioButtonGroup,
+  RadioButton,
   Input,
-  Select
+  Select,
+  Option
 } from '@pega/cosmos-react-core';
 import SignaturePad from 'signature_pad';
 import Signature from './Signature';
@@ -141,6 +143,41 @@ export const PegaExtensionsSignatureCapture = (props: SignatureCaptureProps) => 
   return (
     <StyledSignatureContent>
       <Flex container={{ direction: 'column', gap: 2 }}>
+        {displayMode === 'DISPLAY_ONLY' || readOnly || disabled ? null : (
+          <Flex container={{ direction: 'row', gap: 2, alignItems: 'center' }} style={{ marginBottom: '1rem' }}>
+            <FormField label={getPConnect().getLocalizedValue('Mode')}>
+              <FormControl ariaLabel="Mode">
+                <RadioButtonGroup inline>
+                  <RadioButton
+                    id="draw"
+                    label={getPConnect().getLocalizedValue('Draw')}
+                    checked={mode === 'draw'}
+                    onChange={() => setMode('draw')}
+                  />
+                  <RadioButton
+                    id="type"
+                    label={getPConnect().getLocalizedValue('Type')}
+                    checked={mode === 'type'}
+                    onChange={() => setMode('type')}
+                  />
+                </RadioButtonGroup>
+              </FormControl>
+            </FormField>
+            <FormField label={getPConnect().getLocalizedValue('Pen Color')}>
+              <FormControl ariaLabel="Pen Color">
+                <Select
+                  value={penColor}
+                  onChange={(e: any) => setPenColor(e.target.value)}
+                >
+                  <Option value="#000000">Black</Option>
+                  <Option value="#0000FF">Blue</Option>
+                  <Option value="#FF0000">Red</Option>
+                </Select>
+              </FormControl>
+            </FormField>
+          </Flex>
+        )}
+
         <FormField
           label={label}
           labelHidden={hideLabel}
@@ -156,29 +193,6 @@ export const PegaExtensionsSignatureCapture = (props: SignatureCaptureProps) => 
               <img alt='Signature' src={inputValue} />
             ) : (
               <Flex container={{ direction: 'column', gap: 2 }}>
-                <Flex container={{ direction: 'row', gap: 2, alignItems: 'center' }}>
-                  <RadioButtonGroup
-                    inline
-                    name="signatureMode"
-                    options={[
-                      { value: 'draw', label: getPConnect().getLocalizedValue('Draw') },
-                      { value: 'type', label: getPConnect().getLocalizedValue('Type') }
-                    ]}
-                    value={mode}
-                    onChange={(e: any) => setMode(e.target.value)}
-                  />
-                  <Select
-                    label="Pen Color"
-                    value={penColor}
-                    onChange={(e: any) => setPenColor(e.target.value)}
-                    options={[
-                      { value: '#000000', text: 'Black' },
-                      { value: '#0000FF', text: 'Blue' },
-                      { value: '#FF0000', text: 'Red' }
-                    ]}
-                  />
-                </Flex>
-
                 {mode === 'draw' ? (
                   <Signature
                     signaturePadRef={ref}
@@ -195,7 +209,7 @@ export const PegaExtensionsSignatureCapture = (props: SignatureCaptureProps) => 
                   <Flex container={{ direction: 'column', gap: 2 }}>
                     <Input
                       type="text"
-                      label="Type your name"
+                      placeholder="Type your name"
                       value={typedName}
                       onChange={(e: any) => {
                         setTypedName(e.target.value);
@@ -203,25 +217,27 @@ export const PegaExtensionsSignatureCapture = (props: SignatureCaptureProps) => 
                       }}
                     />
                     {typedName && (
-                      <RadioButtonGroup
-                        name="fontSelection"
-                        value={selectedFont}
-                        onChange={(e: any) => setSelectedFont(e.target.value)}
-                        options={SIGNATURE_FONTS.map(font => ({
-                          value: font.value,
-                          label: (
-                            <StyledFontOption fontFamily={font.value} style={{ color: penColor }}>
-                              {typedName}
-                            </StyledFontOption>
-                          )
-                        }))}
-                      />
+                      <RadioButtonGroup>
+                        {SIGNATURE_FONTS.map(font => (
+                          <RadioButton
+                            key={font.value}
+                            id={font.value}
+                            checked={selectedFont === font.value}
+                            onChange={() => setSelectedFont(font.value)}
+                            label={
+                              <StyledFontOption fontFamily={font.value} style={{ color: penColor }}>
+                                {typedName}
+                              </StyledFontOption>
+                            }
+                          />
+                        ))}
+                      </RadioButtonGroup>
                     )}
                   </Flex>
                 )}
 
-                <Flex as={StyledButtonsWrapper} container={{ direction: 'row', justify: 'between', pad: [1] }}>
-                  <Button compact className='clear' onClick={handleClear}>
+                <Flex as={StyledButtonsWrapper} container={{ direction: 'row', justify: 'between', pad: [1] }} style={{ marginTop: '0.5rem' }}>
+                  <Button compact variant="secondary" className='clear' onClick={handleClear}>
                     {getPConnect().getLocalizedValue('Clear')}
                   </Button>
                   <Button
