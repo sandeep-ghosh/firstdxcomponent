@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import SignatureCapture from './index';
 
-export const configProps = {
+const configProps = {
   value: '',
   label: 'Signature',
   validatemessage: '',

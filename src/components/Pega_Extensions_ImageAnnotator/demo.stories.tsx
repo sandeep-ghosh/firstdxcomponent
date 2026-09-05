@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import ImageAnnotator from './index';
 
-export const configProps = {
+const configProps = {
   value: '[]',
   label: 'Vehicle Damage Annotator',
   imageUrl: 'https://www.w3schools.com/html/img_car.jpg',

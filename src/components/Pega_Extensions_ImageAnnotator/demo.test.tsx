@@ -1,9 +1,14 @@
 import { render } from '@testing-library/react';
 import ImageAnnotator from './index';
-import { configProps } from './demo.stories';
 
 const testProps = {
-  ...configProps,
+  value: '[]',
+  label: 'Vehicle Damage Annotator',
+  imageUrl: 'https://www.w3schools.com/html/img_car.jpg',
+  validatemessage: '',
+  hideLabel: false,
+  helperText: 'Click on the car to drop a damage pin',
+  testId: 'annotator-1',
   getPConnect: () =>
     ({
       getActionsApi: () => ({
